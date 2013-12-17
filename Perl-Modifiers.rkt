@@ -5,6 +5,33 @@
 
 The purpose is to generate a Racket symbol that is consistent with the symbol of its corresponding @code{perl}. These can then be manipulated at the higher levels of the program.
 
+@chunk[<Perl-modifiers>
+       <perl-modifiers-requires>
+       <perl-modifiers-provide>
+       (define modifier_m <modifier_m>)
+       (define modifier_s <modifier_s>)
+       (define modifier_i <modifier_i>)
+       (define modifier_x <modifier_x>)
+       (define modifier_p <modifier_p>)
+       (define modifier_g <modifier_g>)
+       (define modifier_c <modifier_c>)
+       (define modifier_a <modifier_a>)
+       (define modifier_d <modifier_d>)
+       (define modifier_u <modifier_u>)
+       (define modifier_l <modifier_l>)]
+
+The perl-modifiers require the structures @code{lexp} and @code{perl} from @code{Lexp-structures.rkt}.
+
+@chunk[<perl-modifiers-requires>
+       (require "Lexp-structures.rkt")]
+
+@chunk[<perl-modifiers-provide>
+       (provide (all-defined-out))
+       (provide
+        (all-from-out "Lexp-structures.rkt"))]
+
+
+
 @subsection{Basic Modifiers}
 
 Perl-definitions from @link["http://perldoc.perl.org/perlre.html"]{perldoc: @emph{Perl regular expressions}} on 2013/12/15.
@@ -107,24 +134,9 @@ use local character set
       "l" 
       "Briefly, /l sets the character set to that of whatever Locale is in effect at the time of the execution of the pattern match.")]
 
-@subsection{Racket Modifiers Admin}
 
-@chunk[<perl-modifiers-requires>
-       (require "Lexp-structures.rkt")]
 
-@chunk[<*>
-       <perl-modifiers-requires>
-       (define treatStringAsMultipleLines <modifier_m>)
-       (define treatStringAsSingleLine <modifier_s>)
-       (define caseInsensitive <modifier_i>)
-       (define allowWhiteSpaceAndComments <modifier_x>)
-       (define preserveStringMatched <modifier_p>)
-       (define useGlobalMatching <modifier_g>)
-       (define keepCurrentPostion <modifier_c>)
-       (define asciiSafeMatching <modifier_a>)
-       (define defaultCharacterSetMatching <modifier_d>)
-       (define unicodeCharacterSetMatching <modifier_u>)
-       (define loacaleCharacterSetMatching <modifier_l>)]
+
 
 
 

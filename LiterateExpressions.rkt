@@ -12,20 +12,44 @@ As my understanding of Regex's increased, my opinion became that the former is a
 @section{Using Racket}
 Now that it has come back [for a time at least] into the kitchen, the bigger idea is to take a literate programming approach to the project. Thus, the name "LiterateExpressions," captures both the flavor of the project and my approach to coding it up. This means that in part, LiterateExpressions is an exercise in using Racket's scribble documentation language and exploring it's domain specific subset for literate programming.
 
-@chunk[<le_requires>
+@chunk[<LiterateExpressions>
+       <LiterateExpressions_requires>
+       <LiterateExpressions_provide>
+       <LiterateExpression_Modifier_Alias>]
+
+@chunk[<LiterateExpressions_requires>
        (require "Lexp-structures.rkt")
        (require "Lexp-implementation.rkt")
-       (require "Perl-Modifiers.rkt")]
+       (require "Perl-Modifiers.rkt")
+       (require "Perl-EscapeSequence.rkt")]
 
-@chunk[<le_provide>
-       (provide (all-defined-out))]
+@chunk[<LiterateExpressions_provide>
+       (provide (all-defined-out))
+       (provide 
+        (all-from-out  "Lexp-structures.rkt")
+        (all-from-out "Lexp-implementation.rkt")
+        (all-from-out "Perl-Modifiers.rkt")
+        (all-from-out "Perl-EscapeSequence.rkt"))]
+
+@section{LiterateExpression Definitions}
+
+The base symbol definitions for Racket match those of the underlying perl structure. These may be modified again downstream in an application or library.
+
+@chunk[<LiterateExpression_Modifier_Alias>
+       (define treatStringAsMultipleLines modifier_m)
+       (define treatStringAsSingleLine modifier_s)
+       (define caseInsensitive modifier_i)
+       (define allowWhiteSpaceAndComments modifier_x)
+       (define preserveStringMatched modifier_p)
+       (define useGlobalMatching modifier_g)
+       (define keepCurrentPostion modifier_c)
+       (define asciiSafeMatching modifier_a)
+       (define defaultCharacterSetMatching modifier_d)
+       (define unicodeCharacterSetMatching modifier_u)
+       (define loacaleCharacterSetMatching modifier_l)]
                                       
-@chunk[<*>
-       <le_requires>
-       <le_provide>
-       ]
 
-Main chunk is required for normal access to code using @code{scribble/lp}. When rendered with the default output, this unfortunately makes the document a little messy than I would like. Oh well.
+
 
 
        

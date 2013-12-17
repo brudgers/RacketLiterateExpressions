@@ -1,6 +1,5 @@
 
 /* See the beginning of "scribble.css". */
-/* Modified so that RktVal wraps */
 
 /* Monospace: */
 .RktIn, .RktRdr, .RktPn, .RktMeta,
@@ -122,7 +121,6 @@
 
 .RktVal {
   color: #228b22;
-  white-space: pre-wrap;
 }
 
 /* ---------------------------------------- */

@@ -4,6 +4,14 @@
 
 @code{Lexp-structures.rkt} contains the base structures for building literate experssions.
 
+@chunk[LiterateExpressions-structures>
+       <Lexp-structures-provide>
+       <LiterateExpression_definition>
+       <LiterateExpressions_perl_struct>]
+
+@chunk[<Lexp-structures-provide>
+       (provide(all-defined-out))]
+
 @subsection{Base DataTypes}
 
 @subsubsection{Racket lexp DataType}
@@ -13,7 +21,7 @@ An @code{lexp} is a structure which contains:
 @itemlist[@item{a @code{perl} structure @code{p}.}
       @item{a function @code{f} that returns a string for the Racket @code{regex}.}]
               
-@chunk[<lexp_definition>
+@chunk[<LiterateExpression_definition>
        (struct lexp (p f))]
 
 The base datatype of @code{struct} deviates from Racket VerbalExpressions which used a simple matching of @code{string} with @code{symbol}. The reason for changing the data-type to @code{struct} is to ultimately facilitate four possible parsing scenarios:
@@ -32,17 +40,14 @@ A @code{perl} is a structure that contains:
       @item{A string @code{perlx} that is the Perl Language Character for the element}
       @item{a string @code{description} that contains the Perl language description.}]
      
-@chunk[<perl_definition>
-    (define-struct perl (smyb perlx description))]
+@chunk[<LiterateExpressions_perl_struct>
+    (define-struct perl (symb perlx description))]
 
 It is important to recognize that although the Perl Language description may reference features that are not available and that the Regex element may not be available in a particular language - inculding Racket. These are included becuase the wider goal of LiterateExpressions is to provide a platform for implementaiton in other languages, and they may have different features.
 
-@subsection{Lexp Structures Admin}
 
-@chunk[<lexp-structures-provide>
-       (provide(all-defined-out))]
 
-@chunk[<*>
-       <lexp-structures-provide>
-       <lexp_definition>
-       <perl_definition>]
+
+
+
+
