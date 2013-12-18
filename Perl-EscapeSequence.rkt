@@ -30,6 +30,7 @@ The escape characters consist of three groups. The first maps directly to a char
 @chunk[<Perl-EscapeSequences_requires>
        (require "Lexp-structures.rkt")]
 
+
 @chunk[<Perl-EscapeSequences_provide>
        (provide (all-defined-out))
        (provide 
@@ -111,7 +112,7 @@ These sequences will require overriding in many implementations. In Racket and m
 @chunk[<escape_controlChar>
        (perl "controlChar"
 	     "\\cK"
-	     "A control character: example = VT")]
+	     "A control character: example = VT. Implementation must over-ride")]
 
 
 @chunk[<escape_hexadecimal>

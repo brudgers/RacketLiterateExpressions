@@ -69,47 +69,6 @@ When we want a literal \ inside a Racket string or regexp literal, we must escap
 ;; any for the remaining part of the pattern
 
 
-@section{Escape Sequence Definitions}
-
-
-
-(define tab "\\t")
-
-(define newline "\\n")
-
-(define return "\\r")
-
-(define formFeed "\\f")
-
-(define alarm "\\a")
-
-(define escape "\\e")
-
-(define controlChar "\\cK")
-
-;; !!!
-;; hexadecimal
-
-;; !!!
-;; named unicode character
-
-;; !!!
-;; unicode character
-
-;; !!!
-;; charcter whose ordinal is an octal
-
-(define lowerCaseCharacterNext "\\l")
-
-(define upperCaseCharacterNext "\\u")
-
-(define lowerCaseUntilEnd "\\L")
-
-(define upperCaseUntilEnd "\\U")
-
-(define quoteUntilEnd "\\Q")
-
-(define endEscape "\\E")
 
 
 @section{Character Class Definitions}

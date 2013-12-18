@@ -1,6 +1,6 @@
 #lang scribble/lp
 
-@title{Literate Expressions}
+
 This project grows out of my first open source project - a quick and dirty port of VerbalExpressions to Racket in August, 2013.
 The @link["https://github.com/VerbalExpressions"]{VerbalExpressions} project was started by @link["https://github.com/jehna"]{jehna} in JavaScript. The idea behind VerbalExpressions is to create a more readable syntax for Regex's. 
 

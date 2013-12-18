@@ -6,6 +6,21 @@
 
 @emph{Because I am not sure how well it aligns with the goals of LiterateExpressions, this should be considered untsable}
 
+@chunk[<LiterateExpressions_implementation>
+       <lexp-implementation-requires>
+       <exports>
+       <implementation-variables>
+       <implementation-accessors>
+       <beginCapture>
+       <endCapture>
+       <regex>
+       <withAnyCase>
+       <matchCase>
+       <OR>]
+
+@chunk[<lexp-implementation-requires>
+       (require "Lexp-structures.rkt")]
+
 @subsection{Variables}
 The base variables are @code{string}. These store the various parts of the string representing the Regex as it is built up. @emph{Because this implementation uses mutation and strings, it is likely to change}
 
@@ -121,23 +136,10 @@ Renamed from "or" to "OR" to avoid conflict with Racket's built-in @code{or} spe
                     (begin a ... )
                     ")"))))]
 
-@subsection{Lexp Implementaiton Admin}
 
-Main chunk is required for normal access to code using @code{scribble/lp}. Placed at the end of file so that links can be used for navigation.
 
-@chunk[<lexp-implementation-requires>
-       (require "Lexp-structures.rkt")]
 
-@chunk[<*>
-       <exports>
-       <implementation-variables>
-       <implementation-accessors>
-       <beginCapture>
-       <endCapture>
-       <regex>
-       <withAnyCase>
-       <matchCase>
-       <OR>]
+
 
 
 
