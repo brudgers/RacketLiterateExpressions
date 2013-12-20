@@ -35,6 +35,7 @@ The base datatype of @code{struct} deviates from Racket VerbalExpressions which 
 
 The purpose of the @code{perl} structure is to provide a neutral data type that can be exported for use in the implementation of LiterateExpressions in other languages - e.g. the @code{perl} structures could be exported as JSON or XML for use by other programmers interested in implementing LiterateExpressions...or VerbalExpressons for that matter.
 
+@elemtag["perl-struct-defintion"]
 A @code{perl} is a structure that contains:
 @itemlist[@item{A string @code{symb} that provides a consistent name for the Regex token}
       @item{A string @code{perlx} that is the Perl Language Character for the element}

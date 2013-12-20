@@ -2,9 +2,7 @@
 
 @section{Metacharacter Definitions}
 
-From the Racket Documentaiton:
 
-When we want a literal \ inside a Racket string or regexp literal, we must escape it so that it shows up in the string at all. Racket strings use \ as the escape character, so we end up with two \s: one Racket-string \ to escape the regexp \, which then escapes the .. Another character that would need escaping inside a Racket string is ".
 
 @chunk[<MetaCharacters>
        <Perl-MetaCharacters_requires>
@@ -44,6 +42,10 @@ When we want a literal \ inside a Racket string or regexp literal, we must escap
 
 
 @subsection{"Grepish" MetaCharacters}
+
+From the Racket Documentaiton:
+
+When we want a literal \ inside a Racket string or regexp literal, we must escape it so that it shows up in the string at all. Racket strings use \ as the escape character, so we end up with two \s: one Racket-string \ to escape the regexp \, which then escapes the .. Another character that would need escaping inside a Racket string is ".
 
 @chunk[<quoteNextMetaCharacter>
     (perl
@@ -134,7 +136,7 @@ $@chunk[<matchEndOfLine>
     "?"
     "Match One (1) or Zero (0) times.")]
 
-@subsubsection{Greedy Quantifiers Requiring Over Ride}
+@larger{Greedy Quantifiers Requiring Over Ride} -- These quantifiers will probably require functions or methods to implement so that they can take numerical arguments controlling the number of matches.
 
 @chunk[<matchExactlyNTimes>
     (perl
@@ -148,6 +150,8 @@ $@chunk[<matchEndOfLine>
     "matchAtLeastNTimes"
     "{n,}"
     "Match at least n times. Implementation must over-ride")]
+
+This name is really bad, like something from @link["http://thedailywtf.com/"]{The Daily WTF}. But I suppose the big idea is that this can be aliased in the implementation to one's heart's content.
 
 @chunk[<matchAtLeastNTimesNotMoreThanMTimes>
     (perl
@@ -177,9 +181,7 @@ $@chunk[<matchEndOfLine>
     "Non Greedy Match One (1) or Zero (0) times.")]
 
 
-
-
-@subsubsection{Non-Greedy Quantifiers Requiring Over Ride}
+@larger{Non-Greedy Quantifiers Requiring Over Ride} -- These quantifiers will probably require functions or methods to implement so that they can take numerical arguments controlling the number of matches.
 
 @chunk[<nonGreedyMatchExactlyNTimes>
     (perl
@@ -193,6 +195,8 @@ $@chunk[<matchEndOfLine>
     "nonGreedyMatchAtLeastNTimes"
     "{n,}"
     "Non Greedy Match at least n times. Implementation must over-ride")]
+
+Its greedy sibling's name was horrible. But at 41 characters, this name is truely a demon spawn of hell.
 
 @chunk[<nonGreedyMatchAtLeastNTimesNotMoreThanMTimes>
     (perl
