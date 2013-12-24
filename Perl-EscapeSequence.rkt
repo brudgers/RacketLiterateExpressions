@@ -3,6 +3,8 @@
 
 @section{Escape Sequence Definitions}
 
+@(require(for-label "./Lexp-structures.rkt"))
+
 The escape characters consist of three groups. The first maps directly to a character. The second group modifies the matching pattern of either the next character or a range of characters up to the character signaling the end of the range. The third group indicate that a specific type of characer is following. This third group will require overriding in most implementatoins. In Racket the override will be by function. In other languages it might be by an object's method call or some other means.
 
 @chunk[<Perl-EscapeSequences>

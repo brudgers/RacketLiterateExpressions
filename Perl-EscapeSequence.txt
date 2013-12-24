@@ -1,0 +1,17 @@
+<escape_tab>
+<escape_newline>
+<escape_return>
+<escape_formFeed>
+<escape_alarm>
+<escape_escape>
+<escape_lowerCaseNextChar>
+<escape_upperCaseNextChar>
+<escape_lowerCaseUntilEnd>
+<escape_upperCaseUntilEnd>
+<escape_quoteUntilEnd>
+<escape_endModOrQuote>
+<escape_controlChar>
+<escape_hexadecimal>
+<escape_namedUniCode>
+<escape_uniCode>
+<escape_octalCharacter>
